@@ -1,6 +1,5 @@
-﻿namespace DotNet_md1
-{
-    public class Persona
+﻿namespace DotNet_md1 {
+    public class Person
     {
         private string name;
         private string surname;

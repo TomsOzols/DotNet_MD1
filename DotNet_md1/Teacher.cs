@@ -1,16 +1,15 @@
 ﻿using System;
 
 namespace DotNet_md1 {
-
-    public class Teacher : Persona
+    public class Teacher : Person
     {
         public DateTime ContractDate { get; set; }
 
         public override string Print()
         {
             string personaInfo = base.Print();
-            return $"{personaInfo}\nContract date: {ContractDate}";
-
+            string readableContractDate = ContractDate.ToString();
+            return $"{personaInfo}\nContract date: {readableContractDate}";
         }
     }
 }
