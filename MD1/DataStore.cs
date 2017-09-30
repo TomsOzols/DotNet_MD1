@@ -21,6 +21,7 @@ namespace MD1
 
         public static void CreateTestPeople()
         {
+            // Priekš atkārtota pielietojuma izveidoju pāris cilvēku konstantes, kuras atkārtoti pielietoju šeit un vēlāk.
             var testStudents = new List<Student>
             {
                 PeopleConstants.John,
@@ -47,6 +48,7 @@ namespace MD1
             People = newPeople;
         }
 
+        // Šajā metodē izveidojam kursu un pāris lekcijas tajā. Papildus arī pievienojam iepriekš izveidotas konstantes lekciju apmeklējošiem studentiem.
         public static void CreateTestCourseAndLectures()
         {
             var testCourse = new Course
@@ -113,6 +115,7 @@ namespace MD1
 
         public static void ReadFromFile(string fileName)
         {
+            // Paša ērtību labad izmantoju datu klases serializāciju JSON formatā. Nezinu vai tas mājasdarba ietvaros ir pieļaujams, bet nu lai būtu.
             var serializer = new JavaScriptSerializer();
 
             var dataStoreJson = File.ReadAllText(fileName);
@@ -122,6 +125,7 @@ namespace MD1
             Lectures = deserialized.Lectures;
         }
 
+        // Metode kas sagatavo cilvēkam lasāmu informaciju par kursu.
         private static string GetCourseInfoText(Course course)
         {
             var builder = new StringBuilder();
@@ -133,8 +137,10 @@ namespace MD1
             return builder.ToString();
         }
 
+        // Metode kas sagatavo cilvēkam  lasāmu informāciju par lekciju.
         private static string GetLectureInfoText(Lecture lecture)
         {
+            // Ja noepieciešams apstrādāt objektu ar daudzām īpašībām - izvēlos izmantot StringBuilder klasi priekš optimizācijas un pārlasamības.
             var builder = new StringBuilder();
             string courseInfo = GetCourseInfoText(lecture.Course);
 
@@ -158,6 +164,7 @@ namespace MD1
             var peopleInfo = string.Join("\n", people);
             var lectureInfo = string.Join("\n", lectures);
 
+            // Gadījumā ja nav pārāk daudz apstrādājamo parametru - izmantoju string interpolation lai veidotu tekstu - un lai tas būtu vēl pārlasāmāks nekā StringBuilder.
             return $"People in data store:\n{peopleInfo}\n\nLectures in data store:\n{lectureInfo}";
         }
     }

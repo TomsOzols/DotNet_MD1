@@ -29,6 +29,7 @@ namespace MD1
         
         static void Main(string[] args)
         {
+            // Neesmu radis rakstīt komentārus kodā, tā ka atvainojos ja manis pievienotie komentāri vietām ir bezjēdzīgi.
             while (true)
             {
                 WriteInstructions();
@@ -39,20 +40,25 @@ namespace MD1
                     break;
                 }
 
+                // Šeit mēs apstrādājam lietotāja darbības izvēli.
+                // Diezgan jēdzīgi būtu bijis pielietot jaunu enum tipu ar dažādo darbību nosaukumiem.
                 switch (keyPressed.KeyChar)
                 {
+                    // Izsaucam faila nolasīšanas funkcionalitāti
                     case '1':
                     {
                         DataStore.ReadFromFile(DATA_STORE_FILE_NAME);
                         WriteDone();
                         break;
                     }
+                    // Izsaucam faila izveidošanas funkcionalitāti
                     case '2':
                     {
                         DataStore.WriteStoreToFile(DATA_STORE_FILE_NAME);
                         WriteDone();
                         break;
                     }
+                    // Izveidojam testa cilvēkus un lekcijas
                     case '3':
                     {
                         DataStore.CreateTestPeople();
@@ -60,6 +66,7 @@ namespace MD1
                         WriteDone();
                         break;
                     }
+                    // Izveidojam informatīvo tekstu par cilvēku un lekciju kolekcijās esošajiem objektiem
                     case '4':
                     {
                         string dataStoreInfo = DataStore.GetStoreInfoText();

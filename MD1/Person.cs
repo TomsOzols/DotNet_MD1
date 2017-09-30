@@ -7,6 +7,7 @@
         public string Name
         {
             get => name;
+            // Šī vietā labāk īpašības atribūts patiktos.
             set
             {
                 bool isNewNameEmpty = string.IsNullOrWhiteSpace(value);
@@ -29,6 +30,7 @@
 
         public virtual string Print()
         {
+            // Patīk interpolācija
             return $"Full name: {FullName}\nSex: {Sex}";
         }
     }
