@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DotNet_md1 {
+namespace MD1 {
     public class Lecture
     {
         public DateTime LectureDate { get; set; }

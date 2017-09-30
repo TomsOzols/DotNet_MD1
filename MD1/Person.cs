@@ -1,4 +1,4 @@
-﻿namespace DotNet_md1 {
+﻿namespace MD1 {
     public class Person
     {
         private string name;
@@ -17,7 +17,11 @@
             }
         }
 
-        public string Surname { get; set; }
+        public string Surname
+        {
+            get => surname;
+            set { surname = value; }
+        }
 
         public Sex Sex { get; set; }
 

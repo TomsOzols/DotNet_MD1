@@ -1,4 +1,4 @@
-﻿namespace DotNet_md1 {
+﻿namespace MD1 {
     public enum Sex
     {
         Male,

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DotNet_md1 {
+namespace MD1 {
     public class Teacher : Person
     {
         public DateTime ContractDate { get; set; }
