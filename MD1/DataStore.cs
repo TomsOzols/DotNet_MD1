@@ -40,8 +40,11 @@ namespace MD1
                 PeopleConstants.Abigail
             };
 
-            People.AddRange(testStudents);
-            People.AddRange(testTeachers);
+            var newPeople = new List<Person>();
+            newPeople.AddRange(testStudents);
+            newPeople.AddRange(testTeachers);
+
+            People = newPeople;
         }
 
         public static void CreateTestCourseAndLectures()
@@ -92,7 +95,10 @@ namespace MD1
                 }
             };
 
-            Lectures.AddRange(testLectures);
+            var newLectures = new List<Lecture>();
+            newLectures.AddRange(testLectures);
+
+            Lectures = newLectures;
         }
 
         public static void WriteStoreToFile(string fileName)
